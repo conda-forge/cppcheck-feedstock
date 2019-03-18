@@ -25,7 +25,7 @@ requirements:
 test:
   commands:
     - cppcheck --version
-    - cppcheck <(echo ';')
+    - echo ';' > test.h; cppcheck --check-config test.h
 
 about:
   description:
