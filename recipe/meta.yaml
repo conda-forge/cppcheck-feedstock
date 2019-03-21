@@ -10,6 +10,8 @@ source:
   fn: {{ version }}.tar.gz
   url: https://github.com/danmar/cppcheck/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - force-char-cppcheck-1.87.patch
 
 build:
   number: 0
@@ -17,14 +19,18 @@ build:
 
 requirements:
   build:
-  - cmake
   - {{ compiler('c') }}
   - {{ compiler('cxx') }}
   host:
+  - cmake
+  - pcre
+  run:
+  - pcre
 
 test:
   commands:
     - cppcheck --version
+    - echo ';' > test.h; cppcheck --check-config test.h
 
 about:
   description:
