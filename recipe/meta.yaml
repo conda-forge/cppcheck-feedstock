@@ -14,8 +14,16 @@ source:
     - force-char-cppcheck-1.87.patch
 
 build:
-  number: 3
+  number: 4
   skip: True   # [win]
+  script:
+    - mkdir build && cd build
+    - >-
+      cmake ..
+      -DCMAKE_INSTALL_PREFIX=$PREFIX
+      -DCMAKE_BUILD_TYPE=Release
+      -DCMAKE_OSX_SYSROOT=${CONDA_BUILD_SYSROOT}  # [osx]
+    - VERBOSE=1 make install -j ${CPU_COUNT}
 
 requirements:
   build:
