@@ -11,7 +11,9 @@ source:
   url: https://github.com/danmar/cppcheck/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
-    - force-char-cppcheck-1.87.patch
+    # This fixes the failure of path relocation, which conda uses to install
+    # binaries in arbitrary directories.
+    - force-char-cppcheck-1.89.patch
 
 build:
   number: 0
