@@ -15,23 +15,15 @@ source:
 
 build:
   number: 0
-  skip: True   # [win]
-  script:
-    - mkdir build && cd build
-    - >-
-      cmake ..
-      -DCMAKE_INSTALL_PREFIX=$PREFIX
-      -DCMAKE_BUILD_TYPE=Release
-      -DCMAKE_OSX_SYSROOT=${CONDA_BUILD_SYSROOT}  # [osx]
-    - VERBOSE=1 make install -j ${CPU_COUNT}
+  skip: True   # [win and vc<14]
 
 requirements:
   build:
   - {{ compiler('c') }}
   - {{ compiler('cxx') }}
-  host:
-  - make
+  - make  # [osx or unix]
   - cmake
+  host:
   - pcre
   run:
   - pcre
