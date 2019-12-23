@@ -11,7 +11,7 @@ source:
   url: https://github.com/danmar/cppcheck/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
-    - force-char-cppcheck-1.87.patch
+    - fix-binary-relocation-issue-1.90.patch
 
 build:
   number: 0
