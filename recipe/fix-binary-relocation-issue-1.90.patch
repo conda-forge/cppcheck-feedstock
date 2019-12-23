@@ -41,7 +41,7 @@ index c9b51b1d4..bcb052799 100644
 -        searchPaths << FILESDIR << FILESDIR "/cfg";
 +    std::string filesdir(std::string(FILESDIR).c_str());
 +    if (filesdir[0])
-+        searchPaths << filesdir << filesdir "/cfg";
++        searchPaths << filesdir << filesdir + "/cfg";
  #endif
      if (!datadir.isEmpty())
          searchPaths << datadir << datadir + "/cfg";
@@ -55,7 +55,7 @@ index d48d59baf..b72caa449 100644
  #ifdef FILESDIR
 -        cfgfolders.emplace_back(FILESDIR "/cfg");
 +        std::string filesdir(std::string(FILESDIR).c_str());
-+        cfgfolders.emplace_back(filesdir "/cfg");
++        cfgfolders.emplace_back(filesdir + "/cfg");
  #endif
          if (exename) {
              const std::string exepath(Path::fromNativeSeparators(Path::getPathFromFilename(exename)));
