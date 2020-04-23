@@ -13,3 +13,7 @@ cmake \
     $SRC_DIR
 
 VERBOSE=1 make install -j ${CPU_COUNT}
+
+cd ..
+cd htmlreport
+python setup.py install

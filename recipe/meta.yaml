@@ -14,7 +14,7 @@ source:
     - fix-binary-relocation-issue-1.90.patch
 
 build:
-  number: 0
+  number: 1
   skip: True   # [win and vc<14]
 
 requirements:
@@ -24,9 +24,12 @@ requirements:
   - make  # [osx or unix]
   - cmake
   host:
+  - python
+  - setuptools
   - pcre
   run:
   - pcre
+  - pygments
 
 test:
   commands:
