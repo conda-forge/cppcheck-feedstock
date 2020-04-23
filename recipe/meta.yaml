@@ -29,6 +29,7 @@ requirements:
   - pcre
   run:
   - pcre
+  - python
   - pygments
 
 test:
@@ -45,7 +46,7 @@ about:
     zero false positives).
   home: 'http://cppcheck.sourceforge.net/'
   dev_url: 'https://github.com/danmar/cppcheck'
-  license: 'GPLv3'
+  license: 'GPL-3.0-or-later'
   license_family: 'GPL'
   license_file: COPYING
   summary: 'A static analysis tool for C/C++ code.'
