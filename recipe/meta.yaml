@@ -23,6 +23,7 @@ requirements:
   - {{ compiler('cxx') }}
   - make  # [osx or unix]
   - cmake
+  - pygments
   host:
   - python
   - setuptools
