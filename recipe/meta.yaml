@@ -14,7 +14,7 @@ source:
     - fix-binary-relocation-issue-1.90.patch
 
 build:
-  number: 0
+  number: 1
   skip: True   # [win and vc<14]
 
 requirements:
@@ -23,10 +23,15 @@ requirements:
   - {{ compiler('cxx') }}
   - make  # [osx or unix]
   - cmake
+  - pygments
   host:
+  - python
+  - setuptools
   - pcre
   run:
   - pcre
+  - python
+  - pygments
 
 test:
   commands:
@@ -42,7 +47,7 @@ about:
     zero false positives).
   home: 'http://cppcheck.sourceforge.net/'
   dev_url: 'https://github.com/danmar/cppcheck'
-  license: 'GPLv3'
+  license: 'GPL-3.0-or-later'
   license_family: 'GPL'
   license_file: COPYING
   summary: 'A static analysis tool for C/C++ code.'

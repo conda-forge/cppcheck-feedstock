@@ -3,7 +3,7 @@ About cppcheck
 
 Home: http://cppcheck.sourceforge.net/
 
-Package license: GPLv3
+Package license: GPL-3.0-or-later
 
 Feedstock license: BSD 3-Clause
 
@@ -29,17 +29,31 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_target_platformlinux-64</td>
+              <td>linux_python3.6.____cpythontarget_platformlinux-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=190&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cppcheck-feedstock?branchName=master&jobName=linux&configuration=linux_target_platformlinux-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cppcheck-feedstock?branchName=master&jobName=linux&configuration=linux_python3.6.____cpythontarget_platformlinux-64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_target_platformosx-64</td>
+              <td>linux_python3.7.____cpythontarget_platformlinux-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=190&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cppcheck-feedstock?branchName=master&jobName=osx&configuration=osx_target_platformosx-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cppcheck-feedstock?branchName=master&jobName=linux&configuration=linux_python3.7.____cpythontarget_platformlinux-64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_python3.6.____cpythontarget_platformosx-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=190&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cppcheck-feedstock?branchName=master&jobName=osx&configuration=osx_python3.6.____cpythontarget_platformosx-64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_python3.7.____cpythontarget_platformosx-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=190&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cppcheck-feedstock?branchName=master&jobName=osx&configuration=osx_python3.7.____cpythontarget_platformosx-64" alt="variant">
                 </a>
               </td>
             </tr><tr>
