@@ -21,7 +21,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make # [osx or unix]
+    - make  # [osx or unix]
     - cmake
     - pygments
   host:
