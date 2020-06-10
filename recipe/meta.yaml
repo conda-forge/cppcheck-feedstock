@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - fix-binary-relocation-issue-1.90.patch
+    - fix-cmake-version-2.0.patch
 
 build:
   number: 0
