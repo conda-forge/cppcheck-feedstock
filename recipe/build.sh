@@ -16,4 +16,4 @@ VERBOSE=1 make install -j ${CPU_COUNT}
 
 cd ..
 cd htmlreport
-python setup.py install
+$PYTHON setup.py install --single-version-externally-managed --record=record.txt
