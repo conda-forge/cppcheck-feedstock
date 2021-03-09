@@ -1,6 +1,6 @@
 {% set name = "cppcheck" %}
-{% set version = "2.2" %}
-{% set sha256 = "ad96290a1842c5934bf9c4268cb270953f3078d4ce33a9a53922d6cb6daf61aa" %}
+{% set version = "2.3" %}
+{% set sha256 = "3c622628ebf46f68909c7a96743b07b6207894a0772fbe802603732152ab1035" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
     - fix-binary-relocation-issue-1.90.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
