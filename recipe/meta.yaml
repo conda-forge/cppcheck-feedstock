@@ -1,6 +1,6 @@
 {% set name = "cppcheck" %}
-{% set version = "2.3" %}
-{% set sha256 = "3c622628ebf46f68909c7a96743b07b6207894a0772fbe802603732152ab1035" %}
+{% set version = "2.4" %}
+{% set sha256 = "d1ac6a1eaf24f2f54df5a164c7e37d1e0624cc094a4622e226a73b53ede1eeb8" %}
 
 package:
   name: {{ name|lower }}
