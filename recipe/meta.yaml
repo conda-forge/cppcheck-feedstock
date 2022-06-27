@@ -25,7 +25,7 @@ requirements:
     - {{ compiler('cxx') }}
     - make  # [osx or unix]
     - cmake
-    - pygments
+    - pygments  <2.12
   host:
     - python
     - setuptools
@@ -33,7 +33,7 @@ requirements:
   run:
     - pcre
     - python
-    - pygments
+    - pygments  <2.12
 
 test:
   commands:
