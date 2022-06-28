@@ -1,6 +1,6 @@
 {% set name = "cppcheck" %}
-{% set version = "2.6.2" %}
-{% set sha256 = "71461dc01051848cddbfca0bfed9548aa8a386b0f4524ed0344e5ede78044963" %}
+{% set version = "2.7.2" %}
+{% set sha256 = "44486f217f3360dc27ea373f466c3e74e965c485334a55f085640c81bbbed169" %}
 
 package:
   name: {{ name|lower }}
@@ -25,7 +25,7 @@ requirements:
     - {{ compiler('cxx') }}
     - make  # [osx or unix]
     - cmake
-    - pygments
+    - pygments  <2.12
   host:
     - python
     - setuptools
@@ -33,7 +33,7 @@ requirements:
   run:
     - pcre
     - python
-    - pygments
+    - pygments  <2.12
 
 test:
   commands:
