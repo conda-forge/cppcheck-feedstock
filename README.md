@@ -356,5 +356,6 @@ Feedstock Maintainers
 =====================
 
 * [@seanyen](https://github.com/seanyen/)
+* [@timsnyder](https://github.com/timsnyder/)
 * [@tovrstra](https://github.com/tovrstra/)
 
