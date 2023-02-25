@@ -38,6 +38,7 @@ requirements:
 test:
   commands:
     - cppcheck --version
+    - test "$(cppcheck --version)" == "Cppcheck $PKG_VERSION"
     - echo ';' > test.h; cppcheck --check-config test.h
 
 about:
