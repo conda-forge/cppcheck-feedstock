@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - fix-binary-relocation-issue-1.90.patch
+    - 0001-adjust-patchversion-for-2.10.1.patch
 
 build:
   number: 0
@@ -25,7 +26,7 @@ requirements:
     - {{ compiler('cxx') }}
     - make  # [osx or unix]
     - cmake
-    - pygments  <2.12
+    - pygments
   host:
     - python
     - setuptools
@@ -33,11 +34,12 @@ requirements:
   run:
     - pcre
     - python
-    - pygments  <2.12
+    - pygments
 
 test:
   commands:
     - cppcheck --version
+    - test "$(cppcheck --version)" == "Cppcheck $PKG_VERSION"  # [unix]
     - echo ';' > test.h; cppcheck --check-config test.h
 
 about:
