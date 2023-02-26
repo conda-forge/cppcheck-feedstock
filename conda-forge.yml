@@ -1,6 +1,9 @@
 build_platform:
   linux_aarch64: linux_64
-  osx_arm64: osx_64
+# Punt on getting osx_arm64 to work for now. it will require
+# modifying recipe and cmake files to build dmake for build platform first
+# and then using it to cross-compile see #69
+#  osx_arm64: osx_64
 conda_forge_output_validation: true
 github:
   branch_name: main

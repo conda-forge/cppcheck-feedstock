@@ -1,6 +1,6 @@
 {% set name = "cppcheck" %}
-{% set version = "2.7.5" %}
-{% set sha256 = "6c7ac29e57fa8b3ac7be224510200e579d5a90217e2152591ef46ffc947d8f78" %}
+{% set version = "2.10.1" %}
+{% set sha256 = "0a1aa45d00132ecee0c9af467e085efbda448094a89d90137249b080863466d2" %}
 
 package:
   name: {{ name|lower }}
@@ -12,9 +12,10 @@ source:
   sha256: {{ sha256 }}
   patches:
     - fix-binary-relocation-issue-1.90.patch
+    - 0001-adjust-patchversion-for-2.10.1.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -25,7 +26,7 @@ requirements:
     - {{ compiler('cxx') }}
     - make  # [osx or unix]
     - cmake
-    - pygments  <2.12
+    - pygments
   host:
     - python
     - setuptools
@@ -33,11 +34,12 @@ requirements:
   run:
     - pcre
     - python
-    - pygments  <2.12
+    - pygments
 
 test:
   commands:
     - cppcheck --version
+    - test "$(cppcheck --version)" == "Cppcheck $PKG_VERSION"  # [unix]
     - echo ';' > test.h; cppcheck --check-config test.h
 
 about:
