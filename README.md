@@ -1,11 +1,11 @@
-About cppcheck
-==============
+About cppcheck-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cppcheck-feedstock/blob/main/LICENSE.txt)
 
 Home: http://cppcheck.sourceforge.net/
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cppcheck-feedstock/blob/main/LICENSE.txt)
 
 Summary: A static analysis tool for C/C++ code.
 
