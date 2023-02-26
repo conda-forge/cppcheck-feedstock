@@ -1,0 +1,44 @@
+From d22d1dcaee4364e47741ff8049bd7a054f84980f Mon Sep 17 00:00:00 2001
+From: Tim Snyder <snyder.tim@gmail.com>
+Date: Sun, 26 Feb 2023 05:43:30 +0000
+Subject: [PATCH] don't build dmake when crosscompiling
+
+use it from the prebuilt host-build
+---
+ tools/CMakeLists.txt | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/tools/CMakeLists.txt b/tools/CMakeLists.txt
+index cbf3f8bcc..e8ac6e426 100644
+--- a/tools/CMakeLists.txt
++++ b/tools/CMakeLists.txt
+@@ -9,6 +9,13 @@ foreach(file ${srcs_lib})
+     set(srcs_tools ${srcs_tools} ${src})
+ endforeach()
+ 
++if(CMAKE_CROSSCOMPILING)
++    add_custom_target(run-dmake dmake
++	    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
++	    )
++
++else()
++
+ add_executable(dmake EXCLUDE_FROM_ALL
+         dmake.cpp
+         ${CMAKE_SOURCE_DIR}/cli/filelister.cpp
+@@ -16,6 +23,7 @@ add_executable(dmake EXCLUDE_FROM_ALL
+         ${CMAKE_SOURCE_DIR}/lib/utils.cpp
+         $<TARGET_OBJECTS:simplecpp_objs>
+ )
++install(TARGETS dmake RUNTIME DESTINATION ${CMAKE_FULL_BINDIR} COMPONENT applications)
+ target_include_directories(dmake PRIVATE ${CMAKE_SOURCE_DIR}/cli ${CMAKE_SOURCE_DIR}/lib ${CMAKE_SOURCE_DIR}/externals/simplecpp)
+ if (WIN32 AND NOT BORLAND)
+     if(NOT MINGW)
+@@ -28,3 +36,4 @@ endif()
+ add_custom_target(run-dmake $<TARGET_FILE:dmake>
+         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+         DEPENDS dmake)
++endif()
+-- 
+2.39.1
+
