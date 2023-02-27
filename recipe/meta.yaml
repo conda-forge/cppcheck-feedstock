@@ -1,6 +1,6 @@
 {% set name = "cppcheck" %}
-{% set version = "2.10.1" %}
-{% set sha256 = "0a1aa45d00132ecee0c9af467e085efbda448094a89d90137249b080863466d2" %}
+{% set version = "2.10.2" %}
+{% set sha256 = "915785d01fa6f5571e9d450102056466222b554525ce3ad67c61b75508a7a451" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,6 @@ source:
   sha256: {{ sha256 }}
   patches:
     - fix-binary-relocation-issue-1.90.patch
-    - 0001-adjust-patchversion-for-2.10.1.patch
 
 build:
   number: 0
