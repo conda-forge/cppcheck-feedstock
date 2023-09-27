@@ -1,21 +1,16 @@
 {% set name = "cppcheck" %}
 {% set version = "2.12.1" %}
-{% set sha256 = "2a3d4ba1179419612183ab3d6aed6d3b18be75e98cd6f138ea8e2020905dced2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ version }}.tar.gz
   url: https://github.com/danmar/cppcheck/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
-  patches:
-    - fix-binary-relocation-issue-1.90.patch
+  sha256: 2a3d4ba1179419612183ab3d6aed6d3b18be75e98cd6f138ea8e2020905dced2
 
 build:
   number: 0
-  skip: true  # [win and vc<14]
 
 requirements:
   build:
