@@ -1,3 +1,5 @@
+@echo on
+
 mkdir build
 cd build
 cmake ^
@@ -10,4 +12,4 @@ nmake install
 if errorlevel 1 exit 1
 cd ..
 cd htmlreport
-python setup.py install
+%PREFIX%\python.exe setup.py install
