@@ -1,5 +1,5 @@
 {% set name = "cppcheck" %}
-{% set version = "2.13.0" %}
+{% set version = "2.13.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/danmar/cppcheck/archive/{{ version }}.tar.gz
-  sha256: 8229afe1dddc3ed893248b8a723b428dc221ea014fbc76e6289840857c03d450
+  sha256: 24ac191684d518a0a8aa44f48dabfba02daf6cd0f9a002e2d0735ed197b150b5
 
 build:
   number: 0
