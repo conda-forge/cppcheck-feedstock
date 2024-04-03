@@ -2,13 +2,16 @@
 
 mkdir build
 cd build
-cmake ^
-    -G "NMake Makefiles" ^
-    -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
-    -DCMAKE_BUILD_TYPE=Release ^
-    %SRC_DIR%
+cmake %CMAKE_ARGS% ^
+    -G "Ninja" ^
+    %SRC_DIR% ^
+    -DUSE_BUNDLED_TINYXML2=OFF ^
+    -DENABLE_OSS_FUZZ=OFF ^
+    -DPYTHON_EXECUTABLE=$PYTHON ^
+    -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
+
 if errorlevel 1 exit 1
-nmake install
+ninja install
 if errorlevel 1 exit 1
 cd ..
 cd htmlreport

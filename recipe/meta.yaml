@@ -18,13 +18,14 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make  # [osx or unix]
+    - ninja
     - cmake
     - pygments
   host:
     - python
     - setuptools
     - pcre
+    - tinyxml2
   run:
     - pcre
     - python

@@ -1,18 +1,22 @@
 #!/bin/bash
 
-declare -a CMAKE_PLATFORM_FLAGS
-if [[ ${target_platform} == osx-64 ]]; then
-  CMAKE_PLATFORM_FLAGS+=(-DCMAKE_OSX_SYSROOT="${CONDA_BUILD_SYSROOT}")
-fi
+# declare -a CMAKE_PLATFORM_FLAGS
+# if [[ ${target_platform} == osx-64 ]]; then
+#   CMAKE_PLATFORM_FLAGS+=(-DCMAKE_OSX_SYSROOT="${CONDA_BUILD_SYSROOT}")
+# fi
 
 mkdir build && cd build
-cmake ${CMAKE_ARGS} \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX \
-    -DCMAKE_BUILD_TYPE=Release \
-    "${CMAKE_PLATFORM_FLAGS[@]}" \
+cmake $CMAKE_ARGS \
+    -GNinja \
+    -DHAVE_RULES=ON \
+    -DUSE_MATCHCOMPILER=ON \
+    -DUSE_BUNDLED_TINYXML2=OFF \
+    -DENABLE_OSS_FUZZ=OFF \
+    -DPYTHON_EXECUTABLE=$PYTHON \
+    -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON \
     $SRC_DIR
 
-VERBOSE=1 make install -j ${CPU_COUNT}
+ninja install
 
 cd ..
 cd htmlreport
