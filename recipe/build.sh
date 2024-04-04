@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# declare -a CMAKE_PLATFORM_FLAGS
-# if [[ ${target_platform} == osx-64 ]]; then
-#   CMAKE_PLATFORM_FLAGS+=(-DCMAKE_OSX_SYSROOT="${CONDA_BUILD_SYSROOT}")
-# fi
+declare -a CMAKE_PLATFORM_FLAGS
+if [[ "${target_platform}" == "osx-arm64" ]]; then
+  EXTRA_CMAKE_ARGS+=("-DDISABLE_DMAKE=ON")
+fi
 
 mkdir build && cd build
 cmake $CMAKE_ARGS \
@@ -14,6 +14,7 @@ cmake $CMAKE_ARGS \
     -DENABLE_OSS_FUZZ=OFF \
     -DPYTHON_EXECUTABLE=$PYTHON \
     -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON \
+    $EXTRA_CMAKE_ARGS \
     $SRC_DIR
 
 ninja install
