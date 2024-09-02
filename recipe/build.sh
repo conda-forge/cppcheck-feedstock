@@ -20,5 +20,4 @@ cmake $CMAKE_ARGS \
 ninja install
 
 cd ..
-cd htmlreport
-$PYTHON setup.py -m pip install . --no-deps -vv
+$PYTHON -m pip install ./htmlreport/ --no-deps -vv

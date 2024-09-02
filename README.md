@@ -3,7 +3,7 @@ About cppcheck-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cppcheck-feedstock/blob/main/LICENSE.txt)
 
-Home: http://cppcheck.sourceforge.net/
+Home: http://cppcheck.sourceforge.io/
 
 Package license: GPL-3.0-or-later
 

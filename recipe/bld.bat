@@ -15,4 +15,4 @@ ninja install
 if errorlevel 1 exit 1
 cd ..
 cd htmlreport
-%PREFIX%\python.exe setup.py install
+%PREFIX%\python.exe -m pip install htmlreport\ --no-deps -vv
