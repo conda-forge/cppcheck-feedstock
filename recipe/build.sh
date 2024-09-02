@@ -9,7 +9,7 @@ mkdir build && cd build
 cmake $CMAKE_ARGS \
     -GNinja \
     -DHAVE_RULES=ON \
-    -DFILES_DIR=${PREFIX}/share/Cppcheck \
+    -DFILESDIR=${PREFIX}/share/Cppcheck \
     -DUSE_MATCHCOMPILER=ON \
     -DUSE_BUNDLED_TINYXML2=OFF \
     -DENABLE_OSS_FUZZ=OFF \
