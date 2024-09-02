@@ -5,11 +5,9 @@ cd build
 cmake %CMAKE_ARGS% ^
     -G "Ninja" ^
     %SRC_DIR% ^
-    -DHAVE_RULES=ON ^
+    -DUSE_MATCHCOMPILER=ON ^
     -DFILESDIR=%PREFIX%/share/Cppcheck ^
     -DUSE_BUNDLED_TINYXML2=OFF ^
-    -DENABLE_OSS_FUZZ=OFF ^
-    -DPYTHON_EXECUTABLE=%PYTHON% ^
     -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
 
 if errorlevel 1 exit 1
