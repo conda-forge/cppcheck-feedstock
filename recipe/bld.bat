@@ -5,8 +5,8 @@ cd build
 cmake %CMAKE_ARGS% ^
     -G "Ninja" ^
     %SRC_DIR% ^
-    -DHAVE_RULES=ON \
-    -DFILESDIR=%PREFIX%/share/Cppcheck \
+    -DHAVE_RULES=ON ^
+    -DFILESDIR=%PREFIX%/share/Cppcheck ^
     -DUSE_BUNDLED_TINYXML2=OFF ^
     -DENABLE_OSS_FUZZ=OFF ^
     -DPYTHON_EXECUTABLE=%PYTHON% ^
