@@ -26,6 +26,7 @@ requirements:
     - python
     - pip
     - setuptools
+    - setuptools-scm
     - pcre
     - tinyxml2
   run:
