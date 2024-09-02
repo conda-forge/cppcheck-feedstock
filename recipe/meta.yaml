@@ -25,6 +25,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - pcre
     - tinyxml2
   run:
