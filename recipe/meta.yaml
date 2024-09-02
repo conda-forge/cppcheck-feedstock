@@ -24,7 +24,7 @@ requirements:
     - pygments
   host:
     - python
-    - setuptools
+    - pip
     - pcre
     - tinyxml2
   run:
