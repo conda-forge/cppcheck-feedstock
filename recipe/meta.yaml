@@ -25,8 +25,8 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
-    - setuptools-scm
+    - setuptools >=45
+    - setuptools-scm >=3.4
     - pcre
     - tinyxml2
   run:

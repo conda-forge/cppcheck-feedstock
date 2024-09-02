@@ -14,5 +14,5 @@ if errorlevel 1 exit 1
 ninja install
 if errorlevel 1 exit 1
 cd ..
-cd htmlreport
+set SETUPTOOLS_SCM_PRETEND_VERSION="%PKG_VERSION%"
 %PREFIX%\python.exe -m pip install htmlreport\ --no-deps -vv

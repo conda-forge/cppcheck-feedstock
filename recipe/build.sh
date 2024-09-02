@@ -20,4 +20,4 @@ cmake $CMAKE_ARGS \
 ninja install
 
 cd ..
-$PYTHON -m pip install ./htmlreport/ --no-deps -vv
+SETUPTOOLS_SCM_PRETEND_VERSION=${PKG_VERSION} $PYTHON -m pip install ./htmlreport/ --no-deps -vv
