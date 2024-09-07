@@ -10,9 +10,9 @@ cmake $CMAKE_ARGS \
     -GNinja \
     -DHAVE_RULES=ON \
     -DUSE_MATCHCOMPILER=ON \
+    -DFILESDIR=${PREFIX}/share/Cppcheck \
+    -DUSE_MATCHCOMPILER=ON \
     -DUSE_BUNDLED_TINYXML2=OFF \
-    -DENABLE_OSS_FUZZ=OFF \
-    -DPYTHON_EXECUTABLE=$PYTHON \
     -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON \
     $EXTRA_CMAKE_ARGS \
     $SRC_DIR
@@ -20,5 +20,4 @@ cmake $CMAKE_ARGS \
 ninja install
 
 cd ..
-cd htmlreport
-$PYTHON setup.py install --single-version-externally-managed --record=record.txt
+SETUPTOOLS_SCM_PRETEND_VERSION=${PKG_VERSION} $PYTHON -m pip install ./htmlreport/ --no-deps -vv
