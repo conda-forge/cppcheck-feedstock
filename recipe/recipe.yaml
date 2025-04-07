@@ -33,6 +33,7 @@ requirements:
     - tinyxml2
   run:
     - pygments
+    - python
 
 tests:
   - script:
