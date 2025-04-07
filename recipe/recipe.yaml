@@ -11,7 +11,7 @@ source:
   sha256: bfd681868248ec03855ca7c2aea7bcb1f39b8b18860d76aec805a92a967b966c
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -37,10 +37,10 @@ requirements:
 
 tests:
   - script:
-    - cppcheck --version
-    - if: unix
-      then: "test \"$(cppcheck --version)\" == \"Cppcheck $PKG_VERSION\""
-    - "echo ';' > test.h; cppcheck --check-config test.h"
+      - cppcheck --version
+      - if: unix
+        then: "test \"$(cppcheck --version)\" == \"Cppcheck $PKG_VERSION\""
+      - "echo ';' > test.h; cppcheck --check-config test.h"
 
 
 about:
