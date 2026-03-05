@@ -23,7 +23,7 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ stdlib('c') }}
     - ninja
-    - cmake
+    - cmake >=3.22
   host:
     - python
     - pip
