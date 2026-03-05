@@ -1,6 +1,6 @@
 context:
   name: cppcheck
-  version: "2.18.3"
+  version: "2.20.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/danmar/cppcheck/archive/${{ version }}.tar.gz
-  sha256: e37c94e190cdddc65682649b02b72939761585bddd8ada595f922e190a26a2be
+  sha256: 7be7992439339017edb551d8e7d2315f9bb57c402da50c2cee9cd0e2724600a1
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
