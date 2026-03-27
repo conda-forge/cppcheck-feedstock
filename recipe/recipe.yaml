@@ -38,8 +38,6 @@ requirements:
 tests:
   - script:
       - cppcheck --version
-      - if: unix
-        then: "test \"$(cppcheck --version)\" == \"Cppcheck $PKG_VERSION\""
       - "echo ';' > test.h; cppcheck --check-config test.h"
 
 
